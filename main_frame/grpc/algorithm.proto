@@ -1,0 +1,67 @@
+﻿syntax = "proto3";
+
+option java_multiple_files = true;
+
+package service_v2;
+
+service Inference {
+    rpc Inference (InferenceRequest) returns (InferenceReply) {
+    }
+}
+
+message Feature {
+    oneof kind {
+        string feature = 1;
+        float feature_float = 2;
+        int32 feature_int32 = 3;
+    }
+}
+
+message Features {
+    map<string, Feature> feature = 1;
+}
+
+message InferenceRequest {
+    int32 width_id = 1;
+    int32 height_id = 2;
+    int32 depth_id = 3;
+    int32 width = 4;
+    int32 height = 5;
+    int32 depth = 6;
+    bytes encoded_image = 7;
+    string dtype = 8;
+    int32 product_id = 9;
+    int32 workpiece_id = 10;
+    int32 task_id = 11;
+    repeated Features features = 12;
+}
+
+message Point {
+    int32 x = 1;
+    int32 y = 2;
+    int32 z = 3;
+}
+
+message SingleInferenceReply {
+    repeated Point points = 1;
+    string class_name = 2;
+    float xmin = 3;
+    float ymin = 4;
+    float zmin = 5;
+    float xmax = 6;
+    float ymax = 7;
+    float zmax = 8;
+    float score = 9;
+    bytes mask = 10;
+}
+
+message InferenceReply {
+    int32 num_detections = 1;
+    int32 width_id = 2;
+    int32 height_id = 3;
+    int32 depth_id = 4;
+    int32 product_id = 5;
+    int32 workpiece_id = 6;
+    int32 task_id = 7;
+    repeated SingleInferenceReply singleInferenceReply = 8;
+}

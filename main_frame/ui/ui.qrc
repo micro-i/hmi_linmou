@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/logo.svg</file>
+        <file>images/logo-background.png</file>
+        <file>images/device-status.svg</file>
+        <file>images/setting.svg</file>
+        <file>images/data.svg</file>
+        <file>images/debug.svg</file>
+        <file>images/home.svg</file>
+        <file>images/system-info.svg</file>
+        <file>images/position-view.svg</file>
+        <file>images/defect-statistic.svg</file>
+        <file>images/checkout-result.svg</file>
+        <file>images/play-button.svg</file>
+        <file>images/product-shift.svg</file>
+        <file>images/stop-button.svg</file>
+        <file>images/system-info-back.svg</file>
+        <file>images/play-button-white.svg</file>
+        <file>images/stop-button-white.svg</file>
+        <file>images/plugin-background.png</file>
+        <file>images/iconlogo.ico</file>
+        <file>images/product-shift-white.svg</file>
+        <file>images/play-button-grey.svg</file>
+        <file>images/product-shift-grey.svg</file>
+        <file>images/stop-button-grey.svg</file>
+        <file>images/exchange.svg</file>
+        <file>images/user-admin.svg</file>
+        <file>images/user-common.svg</file>
+        <file>images/user-common-white.svg</file>
+        <file>images/user-admin-white.svg</file>
+        <file>images/show-frame-background.png</file>
+        <file>images/down-arrow.svg</file>
+        <file>images/up-arrow.svg</file>
+        <file>images/tool-button-background.svg</file>
+        <file>images/data-white.svg</file>
+        <file>images/debug-white.svg</file>
+        <file>images/home-white.svg</file>
+        <file>images/plugin-button-checklist-white.svg</file>
+        <file>images/logoicon.ico</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>qss/global-light.qss</file>
+    </qresource>
+</RCC>

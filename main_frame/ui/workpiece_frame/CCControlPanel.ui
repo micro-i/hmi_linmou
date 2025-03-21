@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CCControlPanel</class>
+ <widget class="QWidget" name="CCControlPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>569</width>
+    <height>42</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: white;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QCheckBox" name="cxb_enableCutter">
+     <property name="text">
+      <string>启用截面</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cxb_disable3D">
+     <property name="text">
+      <string>隐藏三维</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="cob_direction">
+     <property name="styleSheet">
+      <string notr="true">QComboBox{
+  background-color:#F7F8FA;
+  font-size:14px;
+  padding: 1px 15px 1px 3px;
+  border:1px solid rgba(228,228,228,1);
+  border-radius:4px;
+} 
+
+QComboBox::drop-down {
+  subcontrol-origin: padding;
+  subcontrol-position: top right;
+  width: 15px;
+  border:none;
+}
+
+/* 下拉展开后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    outline: 1px solid #000000;/*选中项外边框*/
+    border: 1px solid;/* 整个下拉窗体的边框 */
+    color: #000000;
+    background-color: #FFFFFF; /* 整个下拉窗体的背景色 */
+    selection-color: #000000;/*下拉框选中项字体颜色*/
+    selection-background-color: #F0F2F8;/* 下拉框选中项的背景色 */
+}
+</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>x</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>y</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>z</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="frameSlider">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

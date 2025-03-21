@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sql/HMI_OCT-DDL.sql</file>
+    </qresource>
+</RCC>

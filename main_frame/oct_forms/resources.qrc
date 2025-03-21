@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/isosurface.vert</file>
+        <file>shaders/isosurface.frag</file>
+        <file>shaders/alpha_blending.frag</file>
+        <file>shaders/alpha_blending.vert</file>
+        <file>shaders/maximum_intensity_projection.vert</file>
+        <file>shaders/maximum_intensity_projection.frag</file>
+        <file>shaders/depth_mip.frag</file>
+        <file>shaders/depth_mip.vert</file>
+        <file>shaders/mida.frag</file>
+        <file>shaders/mida.vert</file>
+        <file>shaders/xray.frag</file>
+        <file>shaders/xray.vert</file>
+        <file>icons/octproz_bscan_icon.png</file>
+        <file>icons/octproz_bscanmarker_icon.png</file>
+        <file>icons/octproz_close_icon.png</file>
+        <file>icons/octproz_connect_icon.png</file>
+        <file>icons/octproz_connected_icon.png</file>
+        <file>icons/octproz_enface_icon.png</file>
+        <file>icons/octproz_enfacemarker_icon.png</file>
+        <file>icons/octproz_klincurve_icon.png</file>
+        <file>icons/octproz_extensions_icon.png</file>
+        <file>icons/octproz_info_icon.png</file>
+        <file>icons/octproz_log_icon.png</file>
+        <file>icons/octproz_play_icon.png</file>
+        <file>icons/octproz_rawsignal_icon.png</file>
+        <file>icons/octproz_record_icon.png</file>
+        <file>icons/octproz_settings_icon.png</file>
+        <file>icons/octproz_stop_icon.png</file>
+        <file>icons/octproz_volume_icon.png</file>
+        <file>icons/octproz_manual_icon.png</file>
+        <file>luts/hotter_lut.png</file>
+        <file>luts/blue_lut.png</file>
+        <file>luts/deep_blue_lut.png</file>
+        <file>luts/fire_lut.png</file>
+        <file>luts/ice_lut.png</file>
+        <file>luts/six_shades_lut.png</file>
+        <file>luts/sixteen_colors_lut.png</file>
+        <file>icons/octproz_connect_icon-white.png</file>
+        <file>icons/octproz_connected_icon-white.png</file>
+        <file>icons/octproz_play_icon-white.png</file>
+        <file>icons/octproz_record_icon-white.png</file>
+        <file>icons/octproz_settings_icon-white.png</file>
+        <file>icons/octproz_stop_icon-white.png</file>
+    </qresource>
+</RCC>

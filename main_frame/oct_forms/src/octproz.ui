@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OCTproZ</class>
+ <widget class="QWidget" name="OCTproZ">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>715</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OCTproZ</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: #000000;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="2" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="hLayout_toolBar"/>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QMenuBar" name="menuBar">
+     <property name="defaultUp">
+      <bool>false</bool>
+     </property>
+     <property name="nativeMenuBar">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <layout class="QGridLayout" name="gLayoutOutput"/>
+   </item>
+   <item row="3" column="1">
+    <layout class="QHBoxLayout" name="hLayoutRight">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+    </layout>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <layout class="QVBoxLayout" name="vLayoutStatus"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QVBoxLayout" name="vLayoutTool"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

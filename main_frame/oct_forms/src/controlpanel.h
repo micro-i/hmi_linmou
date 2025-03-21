@@ -1,0 +1,174 @@
+﻿/**
+**  This file is part of OCTproZ.
+**  OCTproZ is an open source software for processig of optical
+**  coherence tomography (OCT) raw data.
+**  Copyright (C) 2019-2022 Miroslav Zabic
+**
+**  OCTproZ is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  This program is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with this program. If not, see http://www.gnu.org/licenses/.
+**
+****
+** Author:	Miroslav Zabic
+** Contact:	zabic
+**			at
+**			spectralcode.de
+****
+**/
+
+#ifndef CONTROLPANEL_H
+#define CONTROLPANEL_H
+
+#define EXTENDED_PANEL "extended_panel"
+#define DISPLAY_MODE "display_mode"
+#define DISPLAY_MODE_INDEX "display_mode_index"
+#define THRESHOLD "threshold"
+#define RAY_STEP_LENGTH "ray_step_length"
+#define STRETCH_X "stretch_x"
+#define STRETCH_Y "stretch_y"
+#define STRETCH_Z "stretch_z"
+#define CONTINUOUS_UPDATE_ENABLED "continuous_update_enabled"
+#define GAMMA "gamma"
+#define DEPTH_WEIGHT "depth_weight"
+#define SMOOTH_FACTOR "smooth_factor"
+#define ALPHA_EXPONENT "alpha_exponent"
+#define SHADING_ENABLED "shading_enabled"
+#define LUT_ENABLED "lut_enabled"
+#define LUT_FILENAME "lut_filename"
+
+#include <QSpinBox>
+#include <QLabel>
+#include <QLayout>
+#include <QSlider>
+#include <QMenu>
+#include <QComboBox>
+#include <QFileDialog>
+#include <QLineEdit>
+#include <QCheckBox>
+#include <QToolButton>
+#include <QObject>
+
+#include "stringspinbox.h"
+
+
+//todo: common base class for ControlPanel2D and ControlPanel3D
+
+
+// FIXME IMPORTANT PARAMS
+struct GLWindow3DParams {
+	bool extendedViewEnabled;
+	qreal rayMarchStepLength;
+	qreal threshold;
+	//bool updateContinuously;
+	QString displayMode;
+	int displayModeIndex;
+	qreal stretchX;
+	qreal stretchY;
+	qreal stretchZ;
+	qreal gamma;
+	qreal depthWeight;
+	int smoothFactor;
+	qreal alphaExponent;
+	bool shading;
+	bool lutEnabled;
+	QString lutFileName;
+};
+
+class ControlPanel3D : public QWidget
+{
+	Q_OBJECT
+
+public:
+	ControlPanel3D(QWidget* parent);
+	~ControlPanel3D();
+	void setModes(QStringList modes);
+	void enableContinuousUpdate(bool enable);
+	void eraseLUTFileName();
+	GLWindow3DParams getParams();
+
+
+private:
+	void enableExtendedView(bool enable);
+	void findGuiElements();
+	void connectGuiToSettingsChangedSignal();
+	void disconnectGuiFromSettingsChangedSignal();
+	QHBoxLayout* createHBoxLayout(QWidget* firstWidget, QWidget* secondWidget);
+
+    // 参数
+	GLWindow3DParams params;
+    bool extendedView;  // 是否显示额外界面配置
+    // 界面
+	QWidget* panel;
+	QDoubleSpinBox* doubleSpinBoxStepLength;
+	QDoubleSpinBox* doubleSpinBoxThreshold;
+	QDoubleSpinBox* doubleSpinBoxDepthWeight;
+	QDoubleSpinBox* doubleSpinBoxAlphaExponent;
+    QDoubleSpinBox* doubleSpinBoxExponentAlpha;
+	QSpinBox* spinBoxSmoothFactor;
+    QLabel* labelExponentAlpha;
+	QLabel* labelSmoothFactor;
+	QLabel* labelDepthWeight;
+	QLabel* labelStepLength;
+	QLabel* labelThreshold;
+	QLabel* labelMode;
+    StringSpinBox* stringBoxModel;
+	QCheckBox* checkBoxShading;
+    QHBoxLayout* widgetLayout;
+	QGridLayout* layout;
+
+	QDoubleSpinBox* doubleSpinBoxStretchX;
+	QLabel* labelStretchX;
+	QDoubleSpinBox* doubleSpinBoxStretchY;
+	QLabel* labelStretchY;
+	QDoubleSpinBox* doubleSpinBoxStretchZ;
+	QLabel* labelStretchZ;
+	QToolButton* toolButtonMore;
+
+	QDoubleSpinBox* doubleSpinBoxGamma;
+	QLabel* labelGamma;
+
+	QCheckBox* checkBoxLUT;
+	QToolButton* toolButtonOpenLUT;
+
+    // 界面集
+	QList<QLineEdit*> lineEdits;
+	QList<QCheckBox*> checkBoxes;
+	QList<QDoubleSpinBox*> doubleSpinBoxes;
+	QList<QSpinBox*> spinBoxes;
+	QList<StringSpinBox*> stringSpinBoxes;
+	QList<QComboBox*> comboBoxes;
+
+protected:
+
+
+public slots:
+	void updateDisplayParameters();
+	void toggleExtendedView();
+	void setParams(GLWindow3DParams params);
+	void openLUTDialog();
+
+
+signals:
+	void displayParametersChanged(GLWindow3DParams params);
+	void settingsChanged();
+	void lutSelected(QImage lut);
+	void dialogAboutToOpen();
+	void dialogClosed();
+	void error(QString);
+	void info(QString);
+};
+
+
+
+
+
+#endif// CONTROLPANEL_H
